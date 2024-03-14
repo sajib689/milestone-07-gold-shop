@@ -11,7 +11,6 @@ const Goldens = ({handleLoadGold}) => {
         .then(data => setGolds(data))
 
     },[])
-    console.log(golds)
     return (
         <div className="grid grid-cols md:grid-cols-3 gap-5">
             {
