@@ -20,12 +20,25 @@ function App() {
       });
     }
   }
+  const handleRemove = id => {
+    const remove = goldens.filter((item) => item.id != id)
+    setGoldens(remove);
+    
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `Delete Successfully`,
+        showConfirmButton: false,
+        timer: 1500
+      });
+    
+  }
   return (
     <>
     <Navbar></Navbar>
       <div className="md:flex container mx-auto mt-12">
       <Goldens handleLoadGold={handleLoadGold}></Goldens>
-      <SideBar goldens={goldens}></SideBar>
+      <SideBar handleRemove={handleRemove} goldens={goldens}></SideBar>
       </div>
     </>
   )

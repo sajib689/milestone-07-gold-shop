@@ -1,6 +1,6 @@
 import SideBarCard from "../SideBarCard/SideBarCard";
 
-const SideBar = ({ goldens }) => {
+const SideBar = ({ goldens,handleRemove }) => {
   return (
     <div className="w-[310px]">
       <div className="overflow-x-auto">
@@ -18,6 +18,7 @@ const SideBar = ({ goldens }) => {
               <SideBarCard
                 key={goldtable.id}
                 goldtable={goldtable}
+                handleRemove={handleRemove}
               ></SideBarCard>
             ))}
           </tbody>
