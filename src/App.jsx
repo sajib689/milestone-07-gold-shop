@@ -3,6 +3,7 @@ import Goldens from "./Components/Goldens/Goldens"
 import SideBar from "./Components/SideBar/SideBar"
 import Navbar from "./Components/Navbar/Navbar"
 import Swal from "sweetalert2"
+import Slider from "./Components/Slider/Slider"
 
 function App() {
   const [goldens, setGoldens] = useState([])
@@ -34,13 +35,14 @@ function App() {
     
   }
   return (
-    <>
+    <div  className='container mx-auto'>
     <Navbar></Navbar>
+    <Slider></Slider>
       <div className="md:flex container mx-auto mt-12">
       <Goldens handleLoadGold={handleLoadGold}></Goldens>
       <SideBar handleRemove={handleRemove} goldens={goldens}></SideBar>
       </div>
-    </>
+    </div>
   )
 }
 
